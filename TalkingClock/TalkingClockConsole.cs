@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using TalkingClock;
 
 public class TalkingClockConsole
 {
@@ -50,6 +51,8 @@ public class TalkingClockConsole
 	{
 		string timeInWord = "";
 		string pattern = @"^\d{2}:\d{2}$";
+		string errorMessageInvalidFormat = "Invalid time format!";
+		string errorMessageInvalidNumber = "Invalid time numbers!";
 		string TimeFormatTransfer(char a, char b, char c, char d)
 		{
 			string hourWord = "";
@@ -57,179 +60,81 @@ public class TalkingClockConsole
 			string minuteWordFirstDigit = "";
 			string minuteWordSecondDigit = "";
 			string meridiem = "";
+			string meridiemAM = "am";
+			string meridiemPM = "pm";
 			string timeFormatTransferResult;
+			List<HourNum> hourNumbers = new List<HourNum>
+				{
+					new HourNum(){ Number = 0, Word = "twelve", Meridiem = meridiemAM},
+					new HourNum(){ Number = 1, Word = "one", Meridiem = meridiemAM},
+					new HourNum(){ Number = 2, Word = "two", Meridiem = meridiemAM},
+					new HourNum(){ Number = 3, Word = "three", Meridiem = meridiemAM},
+					new HourNum(){ Number = 4, Word = "four", Meridiem = meridiemAM},
+					new HourNum(){ Number = 5, Word = "five", Meridiem = meridiemAM},
+					new HourNum(){ Number = 6, Word = "six", Meridiem = meridiemAM},
+					new HourNum(){ Number = 7, Word = "seven", Meridiem = meridiemAM},
+					new HourNum(){ Number = 8, Word = "eight", Meridiem = meridiemAM},
+					new HourNum(){ Number = 9, Word = "nine", Meridiem = meridiemAM},
+					new HourNum(){ Number = 10, Word = "ten", Meridiem = meridiemAM},
+					new HourNum(){ Number = 11, Word = "eleven", Meridiem = meridiemAM},
+					new HourNum(){ Number = 12, Word = "twelve", Meridiem = meridiemPM},
+					new HourNum(){ Number = 13, Word = "one", Meridiem = meridiemPM},
+					new HourNum(){ Number = 14, Word = "two", Meridiem = meridiemPM},
+					new HourNum(){ Number = 15, Word = "three", Meridiem = meridiemPM},
+					new HourNum(){ Number = 16, Word = "four", Meridiem = meridiemPM},
+					new HourNum(){ Number = 17, Word = "five", Meridiem = meridiemPM},
+					new HourNum(){ Number = 18, Word = "six", Meridiem = meridiemPM},
+					new HourNum(){ Number = 19, Word = "seven", Meridiem = meridiemPM},
+					new HourNum(){ Number = 20, Word = "eight", Meridiem = meridiemPM},
+					new HourNum(){ Number = 21, Word = "nine", Meridiem = meridiemPM},
+					new HourNum(){ Number = 22, Word = "ten", Meridiem = meridiemPM},
+					new HourNum(){ Number = 23, Word = "eleven", Meridiem = meridiemPM},
+				};
+			List<MinuteNum> minuteNumbers = new List<MinuteNum>
+					{
+						new MinuteNum(){ Number = 0, Word = ""},
+						new MinuteNum(){ Number = 1, Word = "oh one"},
+						new MinuteNum(){ Number = 2, Word = "oh two"},
+						new MinuteNum(){ Number = 3, Word = "oh three"},
+						new MinuteNum(){ Number = 4, Word = "oh four"},
+						new MinuteNum(){ Number = 5, Word = "oh five"},
+						new MinuteNum(){ Number = 6, Word = "oh six"},
+						new MinuteNum(){ Number = 7, Word = "oh seven"},
+						new MinuteNum(){ Number = 8, Word = "oh eight"},
+						new MinuteNum(){ Number = 9, Word = "oh nine"},
+						new MinuteNum(){ Number = 10, Word = "ten"},
+						new MinuteNum(){ Number = 11, Word = "eleven"},
+						new MinuteNum(){ Number = 12, Word = "twelve"},
+						new MinuteNum(){ Number = 13, Word = "thirteen"},
+						new MinuteNum(){ Number = 14, Word = "fourteen"},
+						new MinuteNum(){ Number = 15, Word = "fifteen"},
+						new MinuteNum(){ Number = 16, Word = "sixteen"},
+						new MinuteNum(){ Number = 17, Word = "seventeen"},
+						new MinuteNum(){ Number = 18, Word = "eighteen"},
+						new MinuteNum(){ Number = 19, Word = "nineteen"},
+					};
 			int hourNum = (int)Char.GetNumericValue(a) * 10 + (int)Char.GetNumericValue(b);
 			int minNum = (int)Char.GetNumericValue(c) * 10 + (int)Char.GetNumericValue(d);
 			if (hourNum < 0 || hourNum >= 24 || minNum < 0 || minNum >= 60)
 			{
-				timeFormatTransferResult = "Invalid time numbers!";
+				timeFormatTransferResult = errorMessageInvalidNumber;
 			}
 			else
 			{
-				switch (hourNum)
-				{
-					case 1:
-						hourWord = "one";
-						meridiem = "am";
-						break;
-					case 2:
-						hourWord = "two";
-						meridiem = "am";
-						break;
-					case 3:
-						hourWord = "three";
-						meridiem = "am";
-						break;
-					case 4:
-						hourWord = "four";
-						meridiem = "am";
-						break;
-					case 5:
-						hourWord = "five";
-						meridiem = "am";
-						break;
-					case 6:
-						hourWord = "six";
-						meridiem = "am";
-						break;
-					case 7:
-						hourWord = "seven";
-						meridiem = "am";
-						break;
-					case 8:
-						hourWord = "eight";
-						meridiem = "am";
-						break;
-					case 9:
-						hourWord = "nine";
-						meridiem = "am";
-						break;
-					case 10:
-						hourWord = "ten";
-						meridiem = "am";
-						break;
-					case 11:
-						hourWord = "eleven";
-						meridiem = "am";
-						break;
-					case 12:
-						hourWord = "twelve";
-						meridiem = "pm";
-						break;
-					case 13:
-						hourWord = "one";
-						meridiem = "pm";
-						break;
-					case 14:
-						hourWord = "two";
-						meridiem = "pm";
-						break;
-					case 15:
-						hourWord = "three";
-						meridiem = "pm";
-						break;
-					case 16:
-						hourWord = "four";
-						meridiem = "pm";
-						break;
-					case 17:
-						hourWord = "five";
-						meridiem = "pm";
-						break;
-					case 18:
-						hourWord = "six";
-						meridiem = "pm";
-						break;
-					case 19:
-						hourWord = "seven";
-						meridiem = "pm";
-						break;
-					case 20:
-						hourWord = "eight";
-						meridiem = "pm";
-						break;
-					case 21:
-						hourWord = "nine";
-						meridiem = "pm";
-						break;
-					case 22:
-						hourWord = "ten";
-						meridiem = "pm";
-						break;
-					case 23:
-						hourWord = "eleven";
-						meridiem = "pm";
-						break;
-					case 0:
-						hourWord = "twelve";
-						meridiem = "am";
-						break;
-				}
+				foreach (HourNum hourNumber in hourNumbers)
+					if (hourNum == hourNumber.Number)
+					{
+						hourWord = hourNumber.Word;
+						meridiem = hourNumber.Meridiem;
+					};
+
 				if (minNum <= 19)
 				{
-					switch (minNum)
-					{
-						case 0:
-							minuteWord = "";
-							break;
-						case 1:
-							minuteWord = "oh one";
-							break;
-						case 2:
-							minuteWord = "oh two";
-							break;
-						case 3:
-							minuteWord = "oh three";
-							break;
-						case 4:
-							minuteWord = "oh four";
-							break;
-						case 5:
-							minuteWord = "oh five";
-							break;
-						case 6:
-							minuteWord = "oh six";
-							break;
-						case 7:
-							minuteWord = "oh seven";
-							break;
-						case 8:
-							minuteWord = "oh eight";
-							break;
-						case 9:
-							minuteWord = "oh nine";
-							break;
-						case 10:
-							minuteWord = "ten";
-							break;
-						case 11:
-							minuteWord = "eleven";
-							break;
-						case 12:
-							minuteWord = "twelve";
-							break;
-						case 13:
-							minuteWord = "thirteen";
-							break;
-						case 14:
-							minuteWord = "fourteen";
-							break;
-						case 15:
-							minuteWord = "fifteen";
-							break;
-						case 16:
-							minuteWord = "sixteen";
-							break;
-						case 17:
-							minuteWord = "seventeen";
-							break;
-						case 18:
-							minuteWord = "eighteen";
-							break;
-						case 19:
-							minuteWord = "nineteen";
-							break;
-					}
+					foreach (MinuteNum minuteNumber in minuteNumbers)
+						if (minNum == minuteNumber.Number)
+						{
+							minuteWord = minuteNumber.Word;
+						};
 				}
 				else
 				{
@@ -303,7 +208,7 @@ public class TalkingClockConsole
 			}
 			else
 			{
-				timeInWord = "Invalid time format!";
+				timeInWord = errorMessageInvalidFormat;
 			}
 		}
 		return timeInWord;

@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TalkingClockTestProject
 {
 	[TestClass]
-	public class UnitTest1
+	public class TalkingClockUnitTest
 	{
 		[TestMethod]
 		public void TestMethodSuccessful()
