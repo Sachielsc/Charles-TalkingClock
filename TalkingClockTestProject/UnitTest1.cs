@@ -8,23 +8,21 @@ namespace TalkingClockTestProject
 		[TestMethod]
 		public void TestMethodSuccessful()
 		{
-			Assert.AreEqual("It's eleven eleven am", TalkingClockConsole.TimeFormatTransfer('1', '1', '1', '1'));
-			Assert.AreEqual("It's eleven ten am", TalkingClockConsole.TimeFormatTransfer('1', '1', '1', '0'));
-			Assert.AreEqual("It's eleven twenty am", TalkingClockConsole.TimeFormatTransfer('1', '1', '2', '0'));
-			Assert.AreEqual("It's eleven am", TalkingClockConsole.TimeFormatTransfer('1', '1', '0', '0'));
-			Assert.AreEqual("It's twelve pm", TalkingClockConsole.TimeFormatTransfer('1', '2', '0', '0'));
-			Assert.AreEqual("It's twelve am", TalkingClockConsole.TimeFormatTransfer('0', '0', '0', '0'));
+			Assert.AreEqual("It's eleven eleven am", TalkingClockConsole.InputValidationAndTimeFormatTransfer("00:00"));
+			Assert.AreEqual("It's eleven eleven am", TalkingClockConsole.InputValidationAndTimeFormatTransfer("00:01"));
+			Assert.AreEqual("It's eleven eleven am", TalkingClockConsole.InputValidationAndTimeFormatTransfer("01:00"));
+			Assert.AreEqual("It's eleven eleven am", TalkingClockConsole.InputValidationAndTimeFormatTransfer("01:01"));
+			Assert.AreEqual("It's eleven eleven am", TalkingClockConsole.InputValidationAndTimeFormatTransfer("01:10"));
+			Assert.AreEqual("It's eleven eleven am", TalkingClockConsole.InputValidationAndTimeFormatTransfer("01:11"));
+			Assert.AreEqual("It's eleven eleven am", TalkingClockConsole.InputValidationAndTimeFormatTransfer("11:11"));
+			Assert.AreEqual("It's eleven eleven am", TalkingClockConsole.InputValidationAndTimeFormatTransfer("10:00"));
+
 		}
 
 		[TestMethod]
 		public void TestMethodFailed ()
 		{
-			Assert.AreEqual("It's eleven eleven am", TalkingClockConsole.TimeFormatTransfer('1', '1', '1', '1'));
-			Assert.AreEqual("It's eleven ten am", TalkingClockConsole.TimeFormatTransfer('1', '1', '1', '0'));
-			Assert.AreEqual("It's eleven twenty am", TalkingClockConsole.TimeFormatTransfer('1', '1', '2', '0'));
-			Assert.AreEqual("It's eleven am", TalkingClockConsole.TimeFormatTransfer('1', '1', '0', '0'));
-			Assert.AreEqual("It's twelve pm", TalkingClockConsole.TimeFormatTransfer('1', '2', '0', '0'));
-			Assert.AreEqual("Invalid time numbers!", TalkingClockConsole.TimeFormatTransfer('2', '5', '0', '0'));
+			Assert.AreEqual("Invalid time numbers!", TalkingClockConsole.InputValidationAndTimeFormatTransfer("25:00"));
 		}
 	}
 }
