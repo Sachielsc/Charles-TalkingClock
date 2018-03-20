@@ -1,0 +1,17 @@
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\obj\Debug\netcoreapp2.0\TalkingClockTestProject.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\obj\Debug\netcoreapp2.0\TalkingClockTestProject.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\obj\Debug\netcoreapp2.0\TalkingClockTestProject.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\obj\Debug\netcoreapp2.0\TalkingClockTestProject.AssemblyInfo.cs
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\bin\Debug\netcoreapp2.0\TalkingClockTestProject.deps.json
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\bin\Debug\netcoreapp2.0\TalkingClockTestProject.runtimeconfig.json
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\bin\Debug\netcoreapp2.0\TalkingClockTestProject.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\bin\Debug\netcoreapp2.0\TalkingClockTestProject.dll
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\bin\Debug\netcoreapp2.0\TalkingClockTestProject.pdb
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\bin\Debug\netcoreapp2.0\TalkingClock.dll
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\bin\Debug\netcoreapp2.0\TalkingClock.pdb
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\obj\Debug\netcoreapp2.0\TalkingClockTestProject.csproj.CopyComplete
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\obj\Debug\netcoreapp2.0\TalkingClockTestProject.dll
+C:\Users\Admin\Desktop\repos\TalkingClock\TalkingClockTestProject\obj\Debug\netcoreapp2.0\TalkingClockTestProject.pdb
