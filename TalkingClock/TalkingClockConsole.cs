@@ -12,34 +12,34 @@ public class TalkingClockConsole
 		string startMessage = "Type in your list of times (use ENTER to input multiple times):\nPress ENTER twice to finish input and check the result.\nPress 'exit' to quit the program";
 		Console.WriteLine(startMessage);
 
+		// accept input data and proceed the conversion
+		string Run()
+		{
+			string timeInput = " ";
+			List<string> results = new List<string> { };
+			while (!string.IsNullOrEmpty(timeInput))
+			{
+				timeInput = Console.ReadLine();
+
+				if (timeInput == "exit")
+				{
+					Environment.Exit(0);
+				}
+
+				else results.Add(InputValidationAndTimeFormatTransfer(timeInput));
+			}
+			foreach (string result in results)
+			{
+				timeInput = timeInput + result + "\n";
+			}
+			return timeInput;
+		}
+
 		// ready for one or more input requests
 		while (true)
 		{
-			// accept input data and proceed the conversion
-			string Datainput()
-			{
-				string timeInput = " ";
-				List<string> results = new List<string> { };
-				while (!string.IsNullOrEmpty(timeInput))
-				{
-					timeInput = Console.ReadLine();
-
-					if (timeInput == "exit")
-					{
-						Environment.Exit(0);
-					}
-
-					else results.Add(InputValidationAndTimeFormatTransfer(timeInput));
-				}
-				foreach (string result in results)
-				{
-					timeInput = timeInput + result + "\n";
-				}
-				return timeInput;
-			}
-
 			// proceed the first request
-			Console.WriteLine(Datainput());
+			Console.WriteLine(Run());
 
 			// ready for the next request
 			string endMessage = "Continue to type in more request or enter 'exit' to quit the program";
